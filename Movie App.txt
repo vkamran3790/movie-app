@@ -1,0 +1,767 @@
+🟢 DOM
+🔥 1. querySelector()
+
+📌 ساختار
+
+document.querySelector("selector")
+
+💡 معنی
+
+اولین عنصر مطابق selector را از صفحه پیدا می‌کند.
+
+🧪 مثال
+
+let movieInput = document.querySelector("#movieInput");
+
+🎯 کاربرد در پروژه
+
+گرفتن:
+
+Input جستجوی فیلم
+Button سرچ
+Container فیلم‌ها
+Modal
+🟢 Fetch API
+🔥 2. fetch()
+
+📌 ساختار
+
+fetch(url)
+
+💡 معنی
+
+برای ارسال درخواست به یک API استفاده می‌شود.
+
+🧪 مثال
+
+let response = await fetch(movieUrl);
+
+🎯 کاربرد در پروژه
+
+ارسال درخواست به OMDb API برای گرفتن فیلم‌ها.
+
+🟢 Async / Await
+🔥 3. async function
+
+📌 ساختار
+
+async function functionName(){
+
+}
+
+💡 معنی
+
+به تابع اجازه استفاده از await را می‌دهد.
+
+🧪 مثال
+
+async function getMovies(){
+
+}
+
+🎯 کاربرد
+
+مدیریت درخواست‌های API
+
+🔥 4. await
+
+📌 ساختار
+
+let data = await something;
+
+💡 معنی
+
+منتظر می‌ماند تا Promise کامل شود.
+
+🧪 مثال
+
+let response = await fetch(movieUrl);
+
+یعنی:
+
+صبر کن جواب API برسد.
+
+🟢 Response Handling
+🔥 5. response.ok
+
+📌 ساختار
+
+response.ok
+
+💡 معنی
+
+بررسی می‌کند درخواست موفق بوده یا نه.
+
+🧪 مثال
+
+if(!response.ok){
+
+    throw new Error("API Error");
+
+}
+
+🎯 کاربرد
+
+تشخیص خطای API
+
+🔥 6. throw new Error()
+
+📌 ساختار
+
+throw new Error("message")
+
+💡 معنی
+
+یک خطای دستی ایجاد می‌کند.
+
+🧪 مثال
+
+throw new Error("API Error");
+
+🎯 کاربرد
+
+فرستادن خطا به بخش catch
+
+🟢 JSON
+🔥 7. response.json()
+
+📌 ساختار
+
+response.json()
+
+💡 معنی
+
+اطلاعات JSON را تبدیل به Object جاوااسکریپت می‌کند.
+
+🧪 مثال
+
+let data = await response.json();
+
+قبل:
+
+JSON
+
+بعد:
+
+Object
+🟢 Array
+🔥 8. for...of
+
+📌 ساختار
+
+for(let item of array){
+
+}
+
+💡 معنی
+
+روی تمام اعضای آرایه حرکت می‌کند.
+
+🧪 مثال
+
+for(let movie of data.Search){
+
+}
+
+🎯 کاربرد
+
+ساخت کارت برای هر فیلم.
+
+🟢 DOM Creation
+🔥 9. createElement()
+
+📌 ساختار
+
+document.createElement("tag")
+
+💡 معنی
+
+یک عنصر جدید در حافظه می‌سازد.
+
+🧪 مثال
+
+let movieCard = document.createElement("div");
+
+🎯 کاربرد
+
+ساخت کارت فیلم.
+
+🔥 10. classList.add()
+
+📌 ساختار
+
+element.classList.add("class")
+
+💡 معنی
+
+یک کلاس CSS به عنصر اضافه می‌کند.
+
+🧪 مثال
+
+movieCard.classList.add("movie-card");
+🔥 11. append()
+
+📌 ساختار
+
+parent.append(child)
+
+💡 معنی
+
+یک عنصر را داخل عنصر دیگر قرار می‌دهد.
+
+🧪 مثال
+
+moviesContainer.append(card);
+
+🎯 کاربرد
+
+اضافه کردن کارت فیلم به صفحه.
+
+🟢 Dynamic HTML
+🔥 12. innerHTML
+
+📌 ساختار
+
+element.innerHTML = "";
+
+💡 معنی
+
+محتوای داخل یک عنصر را تغییر می‌دهد.
+
+🧪 مثال
+
+movieCard.innerHTML = `
+<h2>${movie.Title}</h2>
+`;
+
+🎯 کاربرد
+
+ساخت UI داینامیک.
+
+🟢 Function Pattern
+🔥 13. Component Function
+
+📌 ساختار
+
+function createSomething(){
+
+}
+
+💡 معنی
+
+یک بخش از UI را در یک تابع جدا می‌کنیم.
+
+🧪 مثال
+
+function createMovieCard(movie){
+
+}
+
+🎯 کاربرد
+
+ساخت کارت‌های فیلم.
+
+ساختار:
+
+Movie Data
+
+↓
+
+createMovieCard()
+
+↓
+
+HTML Card
+
+↓
+
+append()
+
+↓
+
+Page
+
+این ایده پایه Component ها در React است.
+
+🟢 Event
+🔥 14. click Event
+
+📌 ساختار
+
+element.addEventListener(
+"click",
+function(){
+
+}
+)
+
+🧪 مثال
+
+movieCard.addEventListener("click",function(){
+
+showMovieDetails(detailData);
+
+});
+
+🎯 کاربرد
+
+باز کردن جزئیات فیلم.
+
+🔥 15. keydown Event
+
+📌 ساختار
+
+element.addEventListener(
+"keydown",
+function(event){
+
+})
+
+🧪 مثال
+
+if(event.key==="Enter"){
+
+getMovies();
+
+}
+
+🎯 کاربرد
+
+جستجو با Enter.
+
+🟢 Event Object
+🔥 16. event.target
+
+📌 ساختار
+
+event.target
+
+💡 معنی
+
+عنصری که Event روی آن اتفاق افتاده.
+
+🧪 مثال
+
+if(event.target === modal){
+
+}
+
+🎯 کاربرد
+
+بستن Modal با کلیک بیرون.
+
+🟢 Modal Pattern
+🔥 17. نمایش Modal
+
+📌 ساختار
+
+modal.style.display="flex";
+
+💡 معنی
+
+نمایش دادن یک عنصر مخفی.
+
+🔥 18. مخفی کردن Modal
+
+📌 ساختار
+
+modal.style.display="none";
+
+💡 معنی
+
+پنهان کردن عنصر.
+
+🟢 Local Storage
+🔥 19. setItem()
+
+📌 ساختار
+
+localStorage.setItem(key,value)
+
+💡 معنی
+
+ذخیره اطلاعات در مرورگر.
+
+🧪 مثال
+
+localStorage.setItem(
+"lastMovie",
+movie
+);
+🔥 20. getItem()
+
+📌 ساختار
+
+localStorage.getItem(key)
+
+💡 معنی
+
+خواندن اطلاعات ذخیره شده.
+
+🧪 مثال
+
+let savedMovie =
+localStorage.getItem("lastMovie");
+🟢 Error Handling
+🔥 21. try...catch
+
+📌 ساختار
+
+try{
+
+}
+catch(error){
+
+}
+
+💡 معنی
+
+مدیریت خطاهای احتمالی.
+
+🧪 مثال
+
+try{
+
+let response =
+await fetch(url);
+
+}
+catch(error){
+
+console.log(error);
+
+}
+
+🎯 کاربرد
+
+وقتی API قطع شود یا خطا بدهد.
+
+// Get DOM elements from HTML
+// گرفتن عناصر مورد نیاز از صفحه
+let movieInput = document.querySelector("#movieInput");
+let searchBtn = document.querySelector("#searchBtn");
+let moviesContainer = document.querySelector("#moviesContainer");
+let modal = document.querySelector("#modal");
+
+
+// Main function to search movies from API
+// تابع اصلی برای جستجوی فیلم‌ها از API
+async function getMovies() {
+
+    // Get movie name from input
+    // گرفتن نام فیلم وارد شده توسط کاربر
+    let movie = movieInput.value;
+
+
+    // Check if input is empty
+    // بررسی خالی نبودن input
+    if (movie === "") {
+        alert("Please enter a movie name");
+        return;
+    }
+
+
+    // Save last searched movie in LocalStorage
+    // ذخیره آخرین فیلم جستجو شده
+    localStorage.setItem("lastMovie", movie);
+
+
+    // Create API URL for searching movies
+    // ساخت URL برای درخواست به API
+    let movieUrl = `https://www.omdbapi.com/?apikey=96f1c2f8&s=${movie}`;
+
+
+    // Show loading message while waiting for API response
+    // نمایش پیام Loading تا زمانی که جواب API برسد
+    moviesContainer.innerHTML = `
+    <div class="loading">
+    ⏳ Loading movies...
+    </div>
+    `;
+
+
+    try {
+
+        // Send request to API
+        // ارسال درخواست به سرور
+        let response = await fetch(movieUrl);
+
+
+        // Check if request was successful
+        // بررسی موفق بودن درخواست
+        if (!response.ok) {
+            throw new Error("API Error");
+        }
+
+
+        // Convert JSON response into JavaScript object
+        // تبدیل JSON دریافت شده به Object جاوااسکریپت
+        let data = await response.json();
+
+
+
+        // Check if no movie was found
+        // بررسی اینکه فیلمی پیدا شده یا نه
+        if (data.Response === "False") {
+
+            moviesContainer.innerHTML = "Movies not found";
+
+            return;
+        }
+
+
+
+        // Clear old movies before showing new results
+        // پاک کردن نتایج قبلی
+        moviesContainer.innerHTML = "";
+
+
+
+        // Loop through all movies from API response
+        // حرکت روی تمام فیلم‌های دریافت شده
+        for (let movie of data.Search) {
+
+
+            // Create another API request to get full movie details
+            // ارسال درخواست دوم برای گرفتن اطلاعات کامل فیلم
+            let detailUrl =
+            `https://www.omdbapi.com/?apikey=96f1c2f8&i=${movie.imdbID}`;
+
+
+            let detailResponse = await fetch(detailUrl);
+
+
+            // Convert details response to object
+            // تبدیل اطلاعات جزئیات فیلم
+            let detailData = await detailResponse.json();
+
+
+
+            // Check if movie has poster
+            // بررسی وجود پوستر فیلم
+            let poster = movie.Poster !== "N/A"
+                ? movie.Poster
+                : "./cat.jpg";
+
+
+
+            // Create movie card
+            // ساخت کارت فیلم
+            let card = createMovieCard(
+                movie,
+                poster,
+                detailData
+            );
+
+
+
+            // Add movie card to page
+            // اضافه کردن کارت به صفحه
+            moviesContainer.append(card);
+
+        };
+
+
+    } catch (error) {
+
+
+        // Show error message if API fails
+        // نمایش پیام خطا در صورت مشکل API
+        moviesContainer.innerHTML = `
+        <div class="error-box">
+            ❌ Failed to load movies
+            <br>
+            Please try again later
+        </div>
+        `;
+
+
+        // Print error in console for debugging
+        // نمایش خطا برای دیباگ
+        console.log(error);
+    }
+}
+
+
+
+// Get last searched movie from LocalStorage
+// گرفتن آخرین فیلم ذخیره شده
+let savedMovie = localStorage.getItem("lastMovie");
+
+
+// If there is saved movie, load it automatically
+// اگر فیلم قبلی وجود داشت، خودکار جستجو کن
+if (savedMovie) {
+
+    movieInput.value = savedMovie;
+
+    getMovies();
+
+}
+
+
+
+
+// Function to create movie card
+// تابع ساخت کارت فیلم
+function createMovieCard(movie, poster, detailData) {
+
+
+    // Create new div element for movie card
+    // ساخت یک div جدید برای کارت
+    let movieCard = document.createElement("div");
+
+
+    // Add CSS class to card
+    // اضافه کردن کلاس CSS
+    movieCard.classList.add("movie-card");
+
+
+
+    // Insert movie information into card
+    // قرار دادن اطلاعات فیلم داخل کارت
+    movieCard.innerHTML = `
+    <img src="${poster}">    
+    <h2>${movie.Title}</h2>
+    <p>Year: ${movie.Year}</p>
+    <p>⭐ Rating: ${detailData.imdbRating}</p>            
+    <p>🎭 Genre: ${detailData.Genre}</p>
+    <p>🎬 Director: ${detailData.Director}</p>
+    <p>⏱ Runtime: ${detailData.Runtime}</p>           
+    `;
+
+
+
+    // Add click event to open movie details
+    // با کلیک روی کارت، جزئیات فیلم نمایش داده می‌شود
+    movieCard.addEventListener("click", function () {
+
+        showMovieDetails(detailData);
+
+    });
+
+
+
+    // Return completed card
+    // برگرداندن کارت ساخته شده
+    return movieCard;
+
+}
+
+
+
+
+// Function to show movie details in modal
+// تابع نمایش جزئیات فیلم در Modal
+function showMovieDetails(detailData) {
+
+
+    // Show modal
+    // نمایش Modal
+    modal.style.display = "flex";
+
+
+    // Disable page scrolling when modal is open
+    // جلوگیری از Scroll صفحه
+    document.body.style.overflow = "hidden";
+
+
+
+    // Create modal content dynamically
+    // ساخت محتوای Modal به صورت داینامیک
+    modal.innerHTML = `
+    <div class="modal-content">
+
+        <span class="close">❌</span>
+
+        <h2>${detailData.Title}</h2>
+
+        <img src="${detailData.Poster !== "N/A" ? detailData.Poster : "./cat.jpg"}">
+
+        <p>📝 ${detailData.Plot}</p>
+
+        <p>🎭 Genre: ${detailData.Genre}</p>
+
+        <p>🎬 Director: ${detailData.Director}</p>
+
+        <p>👥 Actors: ${detailData.Actors}</p>
+
+        <p>🏆 Awards: ${detailData.Awards}</p>
+
+    </div>
+    `;
+
+
+
+    // Find close button inside modal
+    // پیدا کردن دکمه بستن
+    let closeBtn = modal.querySelector(".close");
+
+
+
+    // Close modal when clicking close button
+    // بستن Modal با کلیک روی دکمه
+    closeBtn.addEventListener("click", function(){
+
+
+        modal.style.display = "none";
+
+
+        // Enable scrolling again
+        document.body.style.overflow="auto";
+
+    });
+
+}
+
+
+
+
+// Close modal when clicking outside the modal box
+// بستن Modal با کلیک روی فضای بیرون
+modal.addEventListener("click", function(event){
+
+
+    // Check if clicked element is modal background
+    // بررسی اینکه روی بک‌گراند کلیک شده یا نه
+    if(event.target === modal){
+
+
+        modal.style.display="none";
+
+
+        // Enable scrolling again
+        document.body.style.overflow="auto";
+
+    }
+
+});
+
+
+
+// Events section
+// بخش Event ها
+
+
+// Search button click event
+// رویداد کلیک دکمه سرچ
+searchBtn.addEventListener("click", function () {
+
+    getMovies();
+
+});
+
+
+
+// Search with Enter key
+// جستجو با زدن کلید Enter
+movieInput.addEventListener("keydown", function (event) {
+
+
+    if (event.key === "Enter") {
+
+        getMovies();
+
+    }
+
+});
